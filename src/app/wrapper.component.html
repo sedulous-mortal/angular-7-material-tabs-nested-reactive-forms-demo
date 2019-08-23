@@ -1,0 +1,10 @@
+<div style="border: 2px solid orange; padding: 5px;">
+  <p style="color: orange;">Wrapper Component: I own the Data</p>
+  <p> I have {{personData.name}} at {{personData.phone}}</p>
+    <summary-component [personData]="personData" 
+                       [areAllFormsValid]="mainForm.valid">
+    </summary-component>
+    <form #mainForm="ngForm">
+      <tabs-component [personData]="personData"></tabs-component>
+    </form>
+</div>

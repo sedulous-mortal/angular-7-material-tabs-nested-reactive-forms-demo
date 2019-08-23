@@ -1,0 +1,11 @@
+<div style="border: 2px solid green; margin-top: 10px; padding: 5px;">
+  <p style="color: green;">Tabs Component: Enter data here to update the wrapper model data</p>
+<mat-tab-group>
+  <mat-tab label="Name Info">
+    <my-name-form [name]="personData.name"></my-name-form>
+  </mat-tab>
+  <mat-tab label="Contact Info">
+    <my-phone-form [phone]="personData.phone"></my-phone-form>
+  </mat-tab>
+</mat-tab-group>
+</div>
