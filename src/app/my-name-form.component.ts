@@ -27,5 +27,6 @@ export class NameFormComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges){
     console.log(this.name, this.nameForm)
+    console.log('name form is ', this.nameForm.status)
   }
 }
