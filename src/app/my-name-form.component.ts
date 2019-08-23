@@ -7,12 +7,12 @@ import { FormGroup, FormControl } from '@angular/forms';
   <form [formGroup]="nameForm">
     <mat-form-field>
       <p>First Name<p>
-      <input matInput type="text" [value]=name.first formControl="firstNameForm">
+      <input matInput type="text" [value]=name.first formControlName="firstName">
     </mat-form-field>
 
     <mat-form-field>
       <p>Last Name<p>
-      <input matInput type="text" [value]=name.last formControl="lastNameForm">
+      <input matInput type="text" [value]=name.last formControlName="lastName">
     </mat-form-field>
   </form>
   
@@ -21,8 +21,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class NameFormComponent implements OnChanges {
   @Input() name: string;
   nameForm= new FormGroup({
-    firstNameForm: new FormControl(''),
-    lastNameForm: new FormControl(''),
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
   })
 
   ngOnChanges(changes: SimpleChanges){
