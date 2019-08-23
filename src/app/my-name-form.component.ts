@@ -4,18 +4,18 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'my-name-form',
   template: `
-  <ng-template matTabContent #nameForm>
+  <form [formGroup]="nameForm">
     <mat-form-field>
       <p>First Name<p>
-      <input matInput [value]=name.first formControl="firstNameForm">
+      <input matInput type="text" [value]=name.first formControl="firstNameForm">
     </mat-form-field>
 
     <mat-form-field>
       <p>Last Name<p>
-      <input matInput [value]=name.last formControl="lastNameForm">
+      <input matInput type="text" [value]=name.last formControl="lastNameForm">
     </mat-form-field>
-  </ng-template>
-  <ng-container *ngTemplateOutlet="nameForm"></ng-container>
+  </form>
+  
 `,
 })
 export class NameFormComponent implements OnChanges {
