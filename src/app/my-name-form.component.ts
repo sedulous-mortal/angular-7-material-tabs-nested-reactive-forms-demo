@@ -1,5 +1,6 @@
-import { Component, Input, OnChanges, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Name } from './person-data.model';
 
 @Component({
   selector: 'my-name-form',
@@ -20,6 +21,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class NameFormComponent implements OnChanges {
   @Input() name: string;
+  @Output() nameData = new EventEmitter<Name>();
+
   nameForm= new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -28,5 +31,12 @@ export class NameFormComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges){
     console.log(this.name, this.nameForm)
     console.log('name form is ', this.nameForm.status)
+  }
+
+  ngOnInit(){
+    this.nameForm.valueChanges.subscribe( (changes: SimpleChanges) => {
+      console.log(changes)
+      this.nameData = this.nameForm.value;
+    })
   }
 }
