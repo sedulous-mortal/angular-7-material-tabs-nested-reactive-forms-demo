@@ -34,6 +34,9 @@ export class NameFormComponent implements OnChanges {
   }
 
   ngOnInit(){
+    // TODO: figure out how to get the nameData (first AND last) to be set to the original form value
+    this.nameData = name;
+    // the line above isn't doing it successfully, see console
     this.nameForm.valueChanges.subscribe( (changes: SimpleChanges) => {
       console.log(changes)
       this.nameData = this.nameForm.value;
