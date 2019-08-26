@@ -2,7 +2,7 @@
   <p style="color: green;">Tabs Component: Enter data here to update the wrapper model data</p>
 <mat-tab-group>
   <mat-tab label="Name Info">
-    <my-name-form [name]="personData.name" (nameData)="capNameData($event)"></my-name-form>
+    <my-name-form [name]="personData.name" (nameData)="captureNameData($event)"></my-name-form>
   </mat-tab>
   <mat-tab label="Contact Info">
     <my-phone-form [phone]="personData.phone"></my-phone-form>
