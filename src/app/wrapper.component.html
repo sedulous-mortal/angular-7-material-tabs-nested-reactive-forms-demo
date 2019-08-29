@@ -2,7 +2,8 @@
   <p style="color: orange;">Wrapper Component: I own the Data</p>
   <p> I have {{personData.name.first}} {{personData.name.last}} at {{personData.phone}}</p>
     <summary-component [personData]="personData" 
-                       [areAllFormsValid]="mainForm.valid">
+                       [areAllFormsValid]="mainForm.valid"
+                       (submitButtonClick)="buttonClicked($event)">
     </summary-component>
     <form #mainForm="ngForm">
       <tabs-component [personData]="personData"></tabs-component>

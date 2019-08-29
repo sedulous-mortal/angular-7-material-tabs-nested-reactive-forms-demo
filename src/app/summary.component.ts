@@ -1,5 +1,5 @@
 import { Input, Output, EventEmitter, Component } from '@angular/core';
-import { Person } from './person-data.model';
+import { Person, Name } from './person-data.model';
 
 @Component({
   selector: 'summary-component',
@@ -8,5 +8,12 @@ import { Person } from './person-data.model';
 export class SummaryComponent  {
    @Input() personData: Person;
    @Input() areAllFormsValid: boolean;
-   @Output() submitButtonClick = new EventEmitter();
+   @Output() submitButtonClicked = new EventEmitter();
+   @Input('scrapedNameData') scrapedNameData: Name;
+
+
+   buttonClicked(wasClicked: boolean){
+    console.log('mainform wrapping tabs forms is valid? === ', this.areAllFormsValid)
+    wasClicked ? this.personData.name = this.scrapedNameData : console.log('nope')
+  }
 }

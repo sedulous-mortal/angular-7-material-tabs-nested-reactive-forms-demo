@@ -1,13 +1,13 @@
 
 <div class="summary" style="border: 2px solid blue; display: flex; padding: 5px;">
   <div style="flex-flow: column nowrap; flex: 1;">
-  <p style="color: blue;">Summary Component: I show the data as I read it from the children of my sibling, the Tabs</p>
-  <!-- <p>Name: {{personData.name.first}} {{personData.name.last}} </p>
-  <p>Contact: {{personData.phone}} </p> -->
+  <p style="color: blue;">Summary Component: I show the data as I read it from my parent, the wrapper, who got it from the children of my sibling, the Tabs</p>
+  <p>Name: {{personData.name.first}} {{personData.name.last}} </p>
+  <p>Contact: {{personData.phone}} </p>
   </div>
   <div style="flex: 1; text-align: center; align-self: center;">
-  <button matButton type="button" (click)="submitButtonClick.emit($event)"
+  <button matButton type="button" (click)="buttonClicked($event)"
                 [disabled]="!areAllFormsValid" >Submit</button>
-  <p style="color: blue;">This button only enables when all the forms in my sibling, the tabs component, are valid, which I check in my own TS file using a global service.</p>
+  <p style="color: blue;">This button only enables when all the forms in my sibling, the tabs component, are valid, which I receive as a boolean every time a field is changed in their children, the forms.</p>
   </div>
 </div>
